@@ -1,18 +1,28 @@
 import React from 'react';
 import Image from 'next/image';
 
-export default function Hero({ hero }) {
-    const { header, content, cta, src } = hero;
+interface HeroType {
+    hero: {
+        header: string,
+        content: string,
+        cta: string,
+        src: string
+    }
+}
 
+const Hero: React.FC<HeroType> = ({ hero: { header, content, cta, src } }) => {
     return (
-        <div className="grid grid-rows-2">
-            <div className="w-100">
-                <h2>{header}</h2>
-                <p>{content}</p>
-                <p>{cta}</p>
+        <div className="">
+            <div className="">
+                <h1 className="">{header}</h1>
+                <p className="">{content}</p>
             </div>
-
-            <Image src={src} width="100%" height="100%" className="bg-blue-700" />
+            <div className="">
+                <Image src={src} width="401" height="537" className="" />
+                <button className="bg-yellow-400 rounded p-3 font-bold uppercase">{cta}</button>
+            </div>
         </div>
     )
 }
+
+export default Hero;
