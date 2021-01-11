@@ -1,7 +1,7 @@
 import React from 'react';
 import Image from 'next/image';
 
-interface HeroType {
+interface HeroInterface {
     hero: {
         header: string,
         content: string,
@@ -10,7 +10,7 @@ interface HeroType {
     }
 }
 
-const Hero: React.FC<HeroType> = ({ hero: { header, content, cta, src } }) => {
+const Hero: React.FC<HeroInterface> = ({ hero: { header, content, cta, src } }) => {
     return (
         <div className="flex flex-col md:flex-row md:flex-wrap">
             <div className="flex flex-wrap flex-col justify-center items-center mt-5 mb-5 text-center">
