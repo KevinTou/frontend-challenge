@@ -18,7 +18,7 @@ const Hero: React.FC<HeroInterface> = ({ hero: { header, content, cta, src } }) 
                 <p className="w-3/4">{content}</p>
             </div>
             <div className="flex flex-wrap flex-col-reverse md:flex-col justify-center items-center">
-                <div className="md:w-full mb-5">
+                <div className="md:w-full mt-7 mb-5">
                     <Image src={src} width="401" height="537" />
                 </div>
                 <button className="bg-yellow-400 rounded p-3 font-bold uppercase mb-5 md:mb-7">{cta}</button>
