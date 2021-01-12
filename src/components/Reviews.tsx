@@ -2,6 +2,7 @@ import React from 'react';
 
 import Review from './Review';
 import { ReviewInterface } from './Review';
+import { HeroInterface } from './Hero';
 
 const mockReviews: Array<ReviewInterface['review']> = [
   {
@@ -24,16 +25,19 @@ const mockReviews: Array<ReviewInterface['review']> = [
   },
 ]
 
-const Reviews: React.FC = () => {
+const Reviews: React.FC<HeroInterface> = ({ hero: { cta } }) => {
   return (
-    <div className="w-3/4 border-t border-black border-solid">
-      <h1 className="text-center text-2xl font-bold uppercase mt-5">Reviews</h1>
-      {mockReviews.map(review => {
-        return (
-          <Review key={review.name} review={review} />
-        )
-      })}
-    </div>
+    <>
+      <div className="w-3/4 border-t border-b border-black border-solid">
+        <h1 className="text-center text-2xl font-bold uppercase mt-5">Reviews</h1>
+        {mockReviews.map(review => {
+          return (
+            <Review key={review.name} review={review} />
+          )
+        })}
+      </div>
+      <button className="bg-yellow-400 rounded p-3 font-bold uppercase mt-7 mb-7 md:mb-7">{cta}</button>
+    </>
   )
 }
 

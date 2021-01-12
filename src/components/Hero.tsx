@@ -1,7 +1,7 @@
 import React from 'react';
 import Image from 'next/image';
 
-interface HeroInterface {
+export interface HeroInterface {
     hero: {
         header: string,
         content: string,
